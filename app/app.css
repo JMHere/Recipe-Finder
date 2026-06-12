@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
 
+body {
+    background-color: #fffdec;
+}
+
+.Title {
+    @apply text-3xl text-black font-bold;
+}

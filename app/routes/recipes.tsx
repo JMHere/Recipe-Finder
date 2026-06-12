@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import { Title } from "~/components/Title";
+import RecipeDetails from "./recipeDetails";
+import { DetailsCard } from "~/components/DetailsCard";
 
 type Recipe = {
     idMeal: string;
@@ -36,7 +38,11 @@ export default function Recipes() {
             Recipes
             </Title>
             {recipes.map((recipe, index) => (
-                <p key={index}>{recipe.strMeal}</p>
+                <DetailsCard 
+                id={recipe.idMeal}
+                img={recipe.strMealThumb + "/small"}
+                name={recipe.strMeal}
+                />
             ))}
         </main>
         
