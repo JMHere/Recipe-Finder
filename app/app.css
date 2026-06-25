@@ -6,5 +6,5 @@ body {
 }
 
 .Title {
-    @apply text-3xl text-black font-bold;
+    @apply text-3xl text-black font-bold text-center p-2;
 }

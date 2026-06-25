@@ -4,14 +4,6 @@ import { Title } from "~/components/Title";
 import RecipeDetails from "./recipeDetails";
 import { DetailsCard } from "~/components/DetailsCard";
 
-type Recipe = {
-    idMeal: string;
-    strArea: string;
-    strCountry: string;
-    strMeal: string;
-    strMealThumb: string;
-}
-
 export default function Recipes() {
 
     const [params] = useSearchParams();
@@ -33,18 +25,20 @@ export default function Recipes() {
     }, []);
 
     return(
-        <main>
+        <div>
             <Title>
             Recipes
             </Title>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {recipes.map((recipe, index) => (
                 <DetailsCard 
                 id={recipe.idMeal}
-                img={recipe.strMealThumb + "/small"}
+                img={recipe.strMealThumb + "/medium"}
                 name={recipe.strMeal}
                 />
             ))}
-        </main>
+            </div>
+        </div>
         
     );
 }

@@ -19,14 +19,16 @@ export function DetailsCard({id, img, name, details1}: CardProps) {
     }
 
     return (
-        <div>
-            <img src={img}/>
-            <p>{name}</p>
-            <p>{details1}</p>
-            <Button 
-            label="View Full Recipe" 
-            onClick={getRecipe}
-            />
+        <div className="shadow-lg p-1 rounded-2xl ml-1">
+            <div className="max-w-sm mx-auto">
+                <img src={img} className="w-full rounded-2xl"/>
+                <p className="text-2xl font-bold">{name}</p>
+                <p>{details1}</p>
+                <Button 
+                label="View Full Recipe" 
+                onClick={getRecipe}
+                />
+            </div>
         </div>
     )
 }

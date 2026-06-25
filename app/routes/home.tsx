@@ -26,17 +26,26 @@ export default function Home() {
     handleNavigate()
   }
 
+  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key == "Enter") {
+      handleClick()
+    }
+  }
+
   return (
-    <main >
-      <Title> Recipe Finder </Title>
-      <input className="border-2" type="text" 
-      value={inputData}
-      onChange={(e) => setInputData(e.target.value) }
-      />
-      <Button 
-        label="Click Me!"
-        onClick={handleClick}
-      />
-    </main>
+    <div>
+      <Title > Recipe Finder </Title>
+      <div className="flex justify-center gap-1">
+        <input className="border-2" type="text" 
+        value={inputData}
+        onChange={(e) => setInputData(e.target.value) }
+        onKeyDown={(e) => handleKeyDown(e)}
+        />
+        <Button 
+          label="Click Me!"
+          onClick={handleClick}
+        />
+      </div>
+    </div>
   );
 }
