@@ -55,4 +55,6 @@ type RecipeDetails = {
     strMeasure18: string,
     strMeasure19: string,
     strMeasure20: string,
+    strIngredients: string[]
+    strMeasurements: string[]
 }
